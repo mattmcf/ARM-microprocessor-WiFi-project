@@ -1,0 +1,37 @@
+This is the README document for STM32F4DISCOVERY board project
+
+Author: Matt McFarland
+
+This project was created as a final project for an embedded systems
+programming class (ENGS 62) at the Thayer School of Engineering 
+at Dartmouth College. (Completed during the winter term of 2015.)
+
+Project Description:
+
+This project used an STM32F4DISCOVERY board to read voltages from a potentiometer,
+send the data over a wifi network through a WIFLY module to a remote server, receive
+group (class) data and then control a servo motor based upon data received from 
+the server.
+
+There are four states in this program (the user can switch states by pressing
+the user button on the board):
+
+1. WiFly command mode -- the user can send configuration/manual commands to the
+WiFly module by transmitting input from the keyboard to the board through the
+USART2 peripheral. The board echoes the keyboard input to the WiFly module through
+USART3.
+
+2. Ping mode -- the board sends PING data through the WiFly module to verify communications
+with the server.
+
+3. Update mode 1 -- the board reads the voltage off of the attached potentiometer, sends
+the value in an UPDATE message to the server. The server (which holds an array of thirty
+potentiometer values) reponds with the updated array of potentiometer values. The board then
+positions an attached servo motor based on the potentiometer at the user ID's index in
+the updated potentiometer array.
+
+4. Update mode 2 -- in this mode, the board requests for an ID/index in the array to "track"
+the servo motor off of.
+
+ 
+
