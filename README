@@ -6,6 +6,8 @@ This project was created as a final project for an embedded systems
 programming class (ENGS 62) at the Thayer School of Engineering 
 at Dartmouth College. (Completed during the winter term of 2015.)
 
+See main.c for running code and initialization
+
 Project Description:
 
 This project used an STM32F4DISCOVERY board to read voltages from a potentiometer,
@@ -34,4 +36,27 @@ the updated potentiometer array.
 the servo motor off of.
 
  
+Module Description:
 
+ADC.h -- functions for initializing and reading data off of the ADC 
+(includes DMA configuration and use)
+
+fsm.h -- functions for configuration of FSM to control state transitions
+
+LED.h -- initializes and sets LEDs on board
+
+ping.h -- send and receive PING/UPDATE information from WiFly module
+
+printHex.h -- prints an integer to console in hex (USART2)
+
+mutex.h -- handles creation and lock/unlock of mutex resources
+
+servo.h -- initializes servo motor control and ADC timer trigger
+
+systick.h -- initializes and starts/stops systick peripheral
+
+USART2.h -- configure and send/recieve on USART2 and USART3 peripherals
+
+userbutton.h -- configure and read userbutton input (debounce)
+
+wait.h -- busy waiting functions (not used)
